@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2ac7adc-4cd4-481c-a649-476156bd71f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../bai04/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai04/src/com/company/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai04/src/com/company/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai04/src/com/company/Engineer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai04/src/com/company/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai04/src/com/company/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai04/src/com/company/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai04/src/com/company/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai04/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,9 +39,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-27" />
-    <option name="width" value="2565" />
-    <option name="height" value="1386" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -58,7 +52,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -81,7 +75,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -130,9 +124,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1719" height="942" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1443175" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14765458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
