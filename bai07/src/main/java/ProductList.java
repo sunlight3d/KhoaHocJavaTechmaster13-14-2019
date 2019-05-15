@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.util.Optional;
 
@@ -30,15 +31,25 @@ public class ProductList extends Stage {
     private Button btnAddNewProduct = new Button("Add new Product");
     //data
     private ObservableList<Product> products = FXCollections.observableArrayList(
-        new Product(1, "iphone 5", 5),
-            new Product(2, "iphone 6", 6),
-            new Product(3, "iphone 7", 7)
+        new Product("iphone 5", 5),
+            new Product("iphone 6", 6),
+            new Product("iphone 6", 6),
+            new Product("iphone 7", 7)
     );
+
     private ContextMenu contextMenu = new ContextMenu();
     private MenuItem menuItemDelete = new MenuItem("Delete");
     private MenuItem menuItemProperties = new MenuItem("Properties");
     private Product selectedProduct;
+    private Boolean checkDublicateProduct(Integer productId) {
+        for(Product product: products) {
+            if(productId == product.getProductId()) {
+                return true;
+            }
+        }
 
+        return false;
+    }
     private void setupContextMenu() {
         contextMenu.getItems().addAll(menuItemDelete, menuItemProperties);
         menuItemDelete.setOnAction(new EventHandler<ActionEvent>() {
@@ -54,7 +65,15 @@ public class ProductList extends Stage {
                 System.out.println("press Properties");
                 //show detail
                 DetailProduct detailProduct = new DetailProduct();
+                detailProduct.setType("update");
                 detailProduct.setAlwaysOnTop(true);
+                detailProduct.setSelectedProduct(selectedProduct);
+                detailProduct.setOnHiding(new EventHandler<WindowEvent>() {
+                    @Override
+                    public void handle(WindowEvent event) {
+                        tableView.refresh();
+                    }
+                });
                 detailProduct.showAndWait();
             }
         });
@@ -63,7 +82,7 @@ public class ProductList extends Stage {
         columnProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         columnProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         columnNumberOfProducts.setCellValueFactory(new PropertyValueFactory<>("numberOfProducts"));
-
+        System.out.println("aaaaa ==="+checkDublicateProduct(4));
         tableView.getColumns().addAll(columnProductId, columnProductName,
                 columnNumberOfProducts);
         tableView.setItems(products);
@@ -106,6 +125,21 @@ public class ProductList extends Stage {
         this.name = name;
         vbox.setPadding(new Insets(10, 10, 10, 10));
         vbox.setSpacing(15);
+        btnAddNewProduct.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DetailProduct detailProduct = new DetailProduct();
+                detailProduct.setType("insert");
+                detailProduct.setOnHiding(new EventHandler<WindowEvent>() {
+                    @Override
+                    public void handle(WindowEvent event) {
+                        products.add(detailProduct.getSelectedProduct());
+                        tableView.refresh();
+                    }
+                });
+                detailProduct.showAndWait();
+            }
+        });
         vbox.getChildren().addAll(labelTitle, tableView, btnAddNewProduct);
         //labelTitle.setText("Name is : "+this.name);
         vbox.setAlignment(Pos.TOP_CENTER);

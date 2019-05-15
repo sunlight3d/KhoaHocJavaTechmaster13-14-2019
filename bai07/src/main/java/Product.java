@@ -1,10 +1,15 @@
 public class Product {
+    public static Integer maxId = 0;
     private Integer productId;
     private String productName;
     private Integer numberOfProducts;
-
-    public Product(Integer productId, String productName, Integer numberOfProducts) {
-        this.productId = productId;
+    public Product() {
+        this.productId = Product.maxId++;
+        productName = "";
+        numberOfProducts = 0;
+    }
+    public Product(String productName, Integer numberOfProducts) {
+        this.productId = Product.maxId++;
         this.productName = productName;
         this.numberOfProducts = numberOfProducts;
     }
